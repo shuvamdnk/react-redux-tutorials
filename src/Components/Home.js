@@ -1,12 +1,13 @@
 import React from "react";
-
+import { FaShoppingCart, FaRegTimesCircle } from "react-icons/fa";
 const Home = (props) => {
+  
   console.log(props);
   return (
     <React.Fragment>
       <div className="container mt-5 shadow-sm">
         <div className="card border-primary">
-          <div className="card-header border-0">Cart</div>
+          <div className="card-header border-0">Wishlists</div>
           <div className="card-body border-0">
             <div
               className="row shadow-sm rounded p-2 bg-light"
@@ -24,12 +25,28 @@ const Home = (props) => {
               <div className="col-md-1">Qty: 2</div>
               <div className="col-md-1">$1200.00</div>
               <div className="col-md-2">
+              <button
+                onClick={()=>{
+                  props.removeToCartHandler()
+                }}
+                  className="btn btn-outline-danger border-0 shadow-sm"
+                  style={{ float: "right" }}
+                >
+                  <FaRegTimesCircle/>
+                </button>
                 <button
+                onClick={()=>{
+                  props.addToCartHandler({
+                    price:1200,
+                    name:"Iphone 14 pro max"
+                  })
+                }}
                   className="btn btn-outline-success border-0 shadow-sm"
                   style={{ float: "right" }}
                 >
-                  Add to cat
+              <FaShoppingCart/>
                 </button>
+               
               </div>
             </div>
 
@@ -49,13 +66,29 @@ const Home = (props) => {
               </div>
               <div className="col-md-6">Apple Macbook Air</div>
               <div className="col-md-1">Qty: 1</div>
-              <div className="col-md-1">$1200.00</div>
+              <div className="col-md-1">$1500.00</div>
               <div className="col-md-2">
+              <button
+                onClick={()=>{
+                  props.removeToCartHandler()
+                }}
+                  className="btn btn-outline-danger border-0 shadow-sm"
+                  style={{ float: "right" }}
+                >
+                 <FaRegTimesCircle/>
+                </button>
+
                 <button
+                onClick={()=>{
+                  props.addToCartHandler({
+                    price:1500,
+                    name:"Apple Macbook Air"
+                  })
+                }}
                   className="btn btn-outline-success border-0 shadow-sm"
                   style={{ float: "right" }}
                 >
-                  Add to cat
+               <FaShoppingCart/>
                 </button>
               </div>
             </div>
@@ -78,11 +111,28 @@ const Home = (props) => {
               <div className="col-md-1">Qty: 1</div>
               <div className="col-md-1">$520.00</div>
               <div className="col-md-2">
+
+              <button
+                onClick={()=>{
+                  props.removeToCartHandler()
+                }}
+                  className="btn btn-outline-danger border-0 shadow-sm"
+                  style={{ float: "right" }}
+                >
+                 <FaRegTimesCircle/>
+                </button>
+
                 <button
+                onClick={()=>{
+                  props.addToCartHandler({
+                    price:520,
+                    name:"Cannon EOS 1500D"
+                  })
+                }}
                   className="btn btn-outline-success border-0 shadow-sm"
                   style={{ float: "right" }}
                 >
-                  Add to cat
+                <FaShoppingCart/>
                 </button>
               </div>
             </div>
